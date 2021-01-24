@@ -1,0 +1,40 @@
+.slideContainer {
+	width: 75%;
+	margin-top: 5px;
+    align-self: center; 
+}
+  
+  .slider {
+	-webkit-appearance: none;
+	width: 50%;
+	height: 5px;
+	background: linear-gradient(90deg, rgb(117, 252, 117) 5%, rgb(214, 214, 214) 0%);
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	border-radius: 12px;
+	box-shadow: 0px 1px 10px 1px black;
+	}
+  
+  .slider:hover {
+	opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+  background: gray;
+	cursor: pointer;
+	border-radius: 50%;
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	border-radius: 50%;
+  background: white;
+  }
