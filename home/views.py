@@ -16,3 +16,8 @@ def all(requests):
         password = Password(title=title, website=website, user=user,myRange=myRange)
         password.save()
     return render(requests,'all.html')
+
+
+def login(requests):
+
+    return render(requests,'login.html')
