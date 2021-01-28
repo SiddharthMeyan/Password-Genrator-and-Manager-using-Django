@@ -13,8 +13,12 @@ def all(requests):
         website = requests.POST.get('website')
         user = requests.POST.get('user')
         myRange=requests.POST.get('myRange')
-        ran_w=string.ascii_letters+string.digits
+        
+        
+        signs='!@#$%&()'
+        ran_w=string.ascii_letters+string.digits+signs
         wpass=[]
+        
         for u in range(int(myRange)):
             wpass.append(random.choice(ran_w))
         wpass=''.join(wpass)
