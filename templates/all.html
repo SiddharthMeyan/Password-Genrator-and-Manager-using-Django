@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {{ wpass }}
-
-    this is the password
-</body>
-</html>
+{% extends 'base.html' %}
+{% block header %}
+    <header class="bg-success text-white">
+        <div class="container text-center">
+            <h1>Your password has been created</h1>
+            <p class="lead">Just fill out the form down below</p>
+        </div>
+    </header>
+    {% endblock header %}
+   {% block body %}
+   
+    <p>{{ wpass }} This is the password</p>
+{% endblock body %}
