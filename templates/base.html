@@ -20,7 +20,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="static/css/scrolling-nav.css" rel="stylesheet">
+  <link href="{%static '/css/scrolling-nav.css'%}" rel="stylesheet">
 
 </head>
 
@@ -39,6 +39,10 @@
 
         {% if user.is_authenticated %}
         <li class="nav-item">
+          
+          <a class="nav-link js-scroll-trigger" href="{% url "profilePage" %}">My Profile</a>
+        </li>
+          <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="{% url "logoutPage" %}">Logout</a>
         </li>
         {% else %}
@@ -67,7 +71,7 @@
 </footer>
 
 <!-- Custom JavaScript for this theme -->
-<script src="static/js/scrolling-nav.js"></script>
+<script src="{% static '/js/scrolling-nav.js'%}"></script>
 
 
 

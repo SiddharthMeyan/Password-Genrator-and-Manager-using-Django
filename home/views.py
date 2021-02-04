@@ -8,7 +8,7 @@ from .forms import CreateUserForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
-
+from django.contrib.auth.decorators import login_required    ####login_required Decorator
 
 def home(requests):
     
@@ -78,4 +78,7 @@ def logoutPage(request):
     return redirect('loginPage')
 
 
+@login_required
+def profilePage(request):
+    return render(request,"profile.html")
     
