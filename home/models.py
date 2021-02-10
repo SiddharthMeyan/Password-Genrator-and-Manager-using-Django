@@ -4,10 +4,11 @@ from PIL import Image
 
 class Password(models.Model):
     title = models.CharField(max_length=122)
-    website = models.CharField(max_length=12)
+    website = models.CharField(max_length=122)
     user = models.CharField(max_length=122)
-    myRange=models.CharField(max_length=7)
+    myRange=models.CharField(max_length=122)
     wpass=models.CharField(max_length=100,default="l")
+    pass_author=models.ForeignKey(User,on_delete=models.CASCADE,related_name='+')
     
     def __str__(self):
         return self.title

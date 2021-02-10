@@ -20,7 +20,7 @@ def all(requests):
         website = requests.POST.get('website')
         user = requests.POST.get('user')
         myRange=requests.POST.get('myRange')
-        
+        pass_author=requests.user
         
         signs='!@#$%&()'
         ran_w=string.ascii_letters+string.digits+signs
@@ -30,7 +30,7 @@ def all(requests):
             wpass.append(random.choice(ran_w))
         wpass=''.join(wpass)
         p={'wpass':wpass}
-        password = Password(title=title, website=website, user=user,myRange=myRange,wpass=wpass)
+        password = Password(title=title, website=website, user=user,myRange=myRange,wpass=wpass,pass_author=pass_author)
         password.save()
 
     return render(requests,'all.html',p)
