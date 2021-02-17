@@ -16,5 +16,13 @@
       <p class="text-secondary">{{user.email}}</p>
     </div>
   </div>
-    <p>{{ wpass }} This is the password</p>
+    <p>{% for i in user_post %}
+<p>TITLE:{{i.title}}</p>
+<p>USER:{{i.pass_author}}</p>
+
+
+
+
+{% endfor %}
+</p>
 {% endblock body %}

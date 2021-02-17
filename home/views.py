@@ -35,7 +35,11 @@ def all(requests):
 
     return render(requests,'all.html',p)
 
-
+@login_required
+def view(requests):
+    user_post=Password.objects.all()
+    context={"user_post":user_post}
+    return render(requests,'view.html',context)
 
 
 def registerPage(request):
@@ -80,5 +84,8 @@ def logoutPage(request):
 
 @login_required
 def profilePage(request):
-    return render(request,"profile.html")
+    log_user=request.user
+    user_post=Password.objects.filter(pass_author=log_user)
+    
+    return render(request,'profile.html',{"user_post":user_post})
     
