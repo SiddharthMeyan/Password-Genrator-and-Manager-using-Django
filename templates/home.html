@@ -54,6 +54,39 @@
                     type="button">Discard</button>
             </div>
         </form>
+
+
+
+       <!-- <button onclick = "gfg_Run()">  this is javascript
+        Click Here 
+    </button> 
+      
+    <p id = "javascript"></p> 
+      
+    <script> 
+        var el_down = document.getElementById("javascript"); 
+        var len=document.getElementById('myRange')
+  
+        /* Function to generate combination of password */ 
+        function generateP() { 
+            var pass = ''; 
+            var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +  
+                    'abcdefghijklmnopqrstuvwxyz0123456789@#$'; 
+              
+            for (i = 1; i <= len; i++) { 
+                var char = Math.floor(Math.random() 
+                            * str.length + 1); 
+                  
+                pass += str.charAt(char) 
+            } 
+              
+            return pass; 
+        } 
+  
+        function gfg_Run() { 
+            el_down.innerHTML = generateP(); 
+        } 
+    </script> -->
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

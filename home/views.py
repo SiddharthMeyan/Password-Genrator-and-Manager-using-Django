@@ -19,9 +19,7 @@ def all(requests):
         title = requests.POST.get('title')
         website = requests.POST.get('website')
         user = requests.POST.get('user')
-        myRange=requests.POST.get('myRange')
-        pass_author=requests.user
-        
+        myRange=requests.POST.get('myRange') 
         signs='!@#$%&()'
         ran_w=string.ascii_letters+string.digits+signs
         wpass=[]
@@ -30,10 +28,15 @@ def all(requests):
             wpass.append(random.choice(ran_w))
         wpass=''.join(wpass)
         p={'wpass':wpass}
-        password = Password(title=title, website=website, user=user,myRange=myRange,wpass=wpass,pass_author=pass_author)
-        password.save()
+        if requests.user.is_authenticated:
+            pass_author=requests.user
+            password = Password(title=title, website=website, user=user,myRange=myRange,wpass=wpass,pass_author=pass_author)
+            password.save()
 
-    return render(requests,'all.html',p)
+            return render(requests,'all.html',p)
+
+        else:
+            return render(requests,'all.html',p)
 
 @login_required
 def view(requests):
